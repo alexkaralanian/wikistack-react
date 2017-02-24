@@ -20,7 +20,6 @@ export const getWikiPages = getWikis => ({
 export const addNewWiki = wikiPage => {
 
   return (dispatch, getState) => {
-
     return axios.post('/api/wiki', wikiPage)
       .then(res => res.data)
       .catch(console.error)
