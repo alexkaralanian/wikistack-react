@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
-import AddPage from './AddPage';
+import AddPageContainer from './containers/AddPageContainer';
 
 import WikiPagesContainer from './containers/WikiPagesContainer'
 import { loadAllWikis } from './action-creators/wikiPages';
@@ -19,7 +19,7 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Layout}>
       <Route path="/wiki" component={WikiPagesContainer} onEnter={onWikiEnter} />
-      <Route path="/wiki/add" component={AddPage} />
+      <Route path="/wiki/add" component={AddPageContainer} />
       <IndexRedirect to="/wiki" />
     </Route>
   </Router>
