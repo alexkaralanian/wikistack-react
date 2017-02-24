@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import store from '../store';
 import AddPage from '../components/AddPage';
-import {addNewWiki} from '../action-creators/wikiPages'
+import {submitNewWiki} from '../action-creators/wikiPages'
 
 export default class AddPageContainer extends Component {
 
@@ -27,7 +27,7 @@ export default class AddPageContainer extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    store.dispatch(addNewWiki(this.state))
+    store.dispatch(submitNewWiki(this.state))
   }
 
   nameChange(evt) {
