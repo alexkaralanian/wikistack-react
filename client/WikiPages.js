@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import store from './store';
-import {receieveWikisFromServer} from './action-creators/wikiPages'
-
-// import {Link} from 'react-router';
 
 export default class WikiPages extends Component {
 
@@ -33,15 +30,11 @@ export default class WikiPages extends Component {
         </form>
         <hr />
         <ul className="list-unstyled">
-          <ul>{
-           
-           this.state.allPages && this.state.allPages.map(page => (
-            
-            <li key={page.id}>{page.title}</li>
-            
-            ))
-
-         }
+          <ul>
+            { this.state.allPages && this.state.allPages.map(page =>
+                (<li key={page.id}>{page.title}</li>)
+              )
+            }
           </ul>
         </ul>
       </div>
