@@ -1,28 +1,38 @@
-import React, { Component } from 'react';
-import store from '../store';
+// import React, { Component } from 'react';
+// import store from '../store';
+import { connect } from  'react-redux';
 import WikiPages from '../components/WikiPages';
 
-export default class WikiPagesContainer extends Component {
+// export default class WikiPagesContainer extends Component {
 
-  constructor() {
-    super();
-    this.state = store.getState()
+  const mapStateToProps = (state) => {
+    return {
+      allPages: state.allPages
+    }
   }
 
-  componentDidMount() {
-    this.unsubscribe = store.subscribe(() => {
-      this.setState(store.getState());
-    });
-  }
+//   constructor() {
+//     super();
+//     this.state = store.getState()
+//   }
 
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
+//   componentDidMount() {
+//     this.unsubscribe = store.subscribe(() => {
+//       this.setState(store.getState());
+//     });
+//   }
 
-  render () {
+//   componentWillUnmount() {
+//     this.unsubscribe();
+//   }
 
-    return (
-      <WikiPages allPages={this.state.allPages} />
-    );
-  }
-}
+//   render () {
+
+//     return (
+//       <WikiPages allPages={this.state.allPages} />
+//     );
+//   }
+// }
+
+export default connect(mapStateToProps)(WikiPages);
+

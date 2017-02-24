@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import AddPage from './AddPage';
 
-// import WikiPages from './components/WikiPages';
 import WikiPagesContainer from './containers/WikiPagesContainer'
-import {loadAllWikis} from './action-creators/wikiPages';
+import { loadAllWikis } from './action-creators/wikiPages';
 import Layout from './Layout';
 import store from './store';
 import { Provider } from 'react-redux';
