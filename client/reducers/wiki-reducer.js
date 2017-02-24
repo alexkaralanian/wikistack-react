@@ -11,7 +11,7 @@ export default function (state = initialState, action) {
 
   switch (action.type) { 
 
-    case 'CREATE_WIKI':
+    case 'RECEIVED_WIKI':
       newState.pages = newState.pages.concat(action.wikiPage)
       break;
 
