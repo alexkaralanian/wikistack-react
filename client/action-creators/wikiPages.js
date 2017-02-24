@@ -1,6 +1,5 @@
 
 import axios from 'axios';
-import store from '../store';
 
 
 // ACTION CREATORS
@@ -24,9 +23,19 @@ export const addNewWiki = wikiPage => {
 
     return axios.post('/api/wiki', wikiPage)
       .then(res => res.data)
-
       .catch(console.error)
   };
 
 };
+
+export const loadAllWikis = () => {
+
+    return dispatch => {
+        return axios.get('/api/wiki')
+        .then(res => {
+            dispatch(getWikiPages(res.data))
+        })
+        .catch(console.error)
+    }
+}
 
